@@ -11,7 +11,12 @@ layout: default
     {% for product in site.products %}
       <div class="col">
         <div class="card card-hover text-center mb-3">
-          <a href="{{ product.url | relative_url }}" class="text-decoration-none">
+          <a href="{{ product.url | relative_url }}"
+             class="text-decoration-none product-click"
+             data-id="{{ product.identifier }}"
+             data-name="{{ product.name }}"
+             data-price="{{ product.price }}"
+             data-location="catalog">
             <img src="{{ product.image | relative_url }}" alt="{{ product.name }} product image" class="w-100">
             <div class="card-body">
               <h5 class="card-title">{{ product.name }}</h5>
@@ -22,3 +27,4 @@ layout: default
       </div>
     {% endfor %}
   </div>
+</div>
